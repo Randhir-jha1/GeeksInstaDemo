@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,6 +31,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+
+        viewBinding = true
+
+    }
 }
 
 dependencies {
@@ -38,6 +44,31 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //FireAuthentication,Storage,realtime database
+    implementation 'com.google.firebase:firebase-auth:22.1.0'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+    implementation 'com.google.firebase:firebase-firestore:24.7.0'
+    implementation 'com.google.firebase:firebase-storage:20.2.1'
+    implementation 'com.google.firebase:firebase-functions:20.3.1'
+
+    //Circular Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //Show image from url
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Hastags handling in description
+    implementation "com.hendraanggrian.appcompat:socialview:0.3-rc1"
+    implementation "com.hendraanggrian.appcompat:socialview-commons:0.3-rc1"
+
+    //Image Crop
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //EditText Customization
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
