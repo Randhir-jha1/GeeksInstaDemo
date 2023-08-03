@@ -37,7 +37,7 @@ class NotificationAdapter(private val mContext: Context, mNotifications: List<No
         getUser(holder.imageProfile,holder.username,notification.userid!!)
         holder.comment.setText(notification.text)
         Log.i("OKKKKKKKKKK",notification.isPost.toString())
-        if (notification.isPost!!){
+        if (notification.getIsPost()!!){
             holder.postImage.visibility= View.VISIBLE
             getPostImage(holder.postImage,notification.postid!!)
         }

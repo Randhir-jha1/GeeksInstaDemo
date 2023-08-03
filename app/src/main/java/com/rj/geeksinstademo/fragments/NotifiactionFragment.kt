@@ -1,6 +1,7 @@
 package com.rj.geeksinstademo.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,7 +49,10 @@ class NotifiactionFragment : Fragment() {
 
                     notificationlist!!.clear()
                     for (datashot in snapshot.children){
+                        Log.i("OKKKKKKK",datashot.toString())
+
                         val notification: Notification = datashot.getValue(Notification::class.java)!!
+                        Log.i("OKKKKKKK",notification.toString())
                         notificationlist.add(notification)
                     }
                     Collections.reverse(notificationlist)
